@@ -1,0 +1,53 @@
+/**
+ * ApplicationUser entity.
+ * @author Boubziz Nassim.
+ */
+entity ApplicationUser  {
+    profilBanner String,
+    profilBio String
+}
+
+/**
+ * Article entity.
+ * @author Boubziz Nassim.
+ */
+entity Article {
+	userId Integer required,
+    title String required,
+    articleBody String required,
+    dateArticle LocalDate required
+}
+
+/**
+ * Tag entity.
+ * @author Boubziz Nassim.
+ */
+entity Tag {
+	libelle String required
+}
+
+relationship OneToOne {
+  ApplicationUser{internalUser required} to User
+  
+}
+
+relationship OneToMany {
+    ApplicationUser{article} to Article{applicationUser}
+}
+
+relationship ManyToMany{
+	Article{tags required} to Tag{articles}
+    ApplicationUser{friends} to ApplicationUser{followers}
+}
+
+//Use Data Transfert Objects (DTO)
+dto * with mapstruct
+// Set service options to all except few
+service all with serviceImpl
+
+//paginate articles
+paginate Article with infinite-scroll
+
+
+
+

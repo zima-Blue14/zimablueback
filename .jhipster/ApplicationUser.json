@@ -1,0 +1,58 @@
+{
+  "name": "ApplicationUser",
+  "fields": [
+    {
+      "fieldName": "profilBanner",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "profilBio",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipValidateRules": "required",
+      "relationshipName": "internalUser",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "article",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipName": "article"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "followers",
+      "relationshipName": "friends",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "friends",
+      "relationshipName": "followers",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210301124609",
+  "javadoc": "ApplicationUser entity.\\n@author Boubziz Nassim.",
+  "entityTableName": "application_user",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

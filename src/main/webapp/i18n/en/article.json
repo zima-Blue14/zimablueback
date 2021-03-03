@@ -1,0 +1,27 @@
+{
+  "zimaApp": {
+    "article": {
+      "home": {
+        "title": "Articles",
+        "createLabel": "Create a new Article",
+        "createOrEditLabel": "Create or edit a Article",
+        "notFound": "No Articles found"
+      },
+      "created": "A new Article is created with identifier {{ param }}",
+      "updated": "A Article is updated with identifier {{ param }}",
+      "deleted": "A Article is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Article {{ id }}?"
+      },
+      "detail": {
+        "title": "Article"
+      },
+      "userId": "User Id",
+      "title": "Title",
+      "articleBody": "Article Body",
+      "dateArticle": "Date Article",
+      "tags": "Tags",
+      "applicationUser": "Application User"
+    }
+  }
+}
